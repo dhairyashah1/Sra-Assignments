@@ -1,10 +1,8 @@
 # Sra-Assignments
 Solutions to problem statements provided by SRA, VJTI
   * [1. Data-Relay](https://github.com/dhairyashah1/Sra-Assignments)
-<!--If you are not familiar with writing readme refer [this](https://guides.github.com/features/mastering-markdown/). 
-> Don't include this line in readme :smiley:   -->
 
-# Project Title 
+# DATA-RELAY 
 Implementing MQTT communication protocol aided by data compression and json manipulation using mosquitto library in C.
 
 
@@ -32,31 +30,32 @@ Consider you have deployed various sensors in your office like temperature, pres
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Product Name Screen Shot][product-screenshot]](https://example.com)  
-
-Aim and Description of project.  
-Refer this [documentation](https://link/to/report/)
+The basic idea of this project is to understand MQTT protocol and this functioning and manipulating large data with minimal space and efficent storage. The project is done using mosquitto library in C. It can also be achieved using the Paho library in C++.
 
 ### Tech Stack
-* [MQTT]()
-* [C]()
-* [Multithreading]()  
-* [JSON]()
+* [MQTT](https://mqtt.org/)
+* [C](#)
+* [Multithreading](https://www.youtube.com/watch?v=QbFM0YroaF0)  
+* [JSON](https://linuxprograms.wordpress.com/2010/05/20/json-c-libjson-tutorial/)
 
 ### File Structure
     .
-    ├── app.py                  # Explain the function preformed by this file in short
-    ├── docs                    # Documentation files (alternatively `doc`)
-    │   ├── report.pdf          # Project report
-    │   └── results             # Folder containing screenshots, gifs, videos of results
+    ├── publisher.c                  # Publishes the data i.e in our case various SENSORS
+    ├── subscriber.c                 # subscribes to the data using MQTT service
+    ├── data    
+    │   ├── device1  
+    |       ├── temperature.txt      # -40 to 110 degree Celcius (upto 2 decimal places)
+    |       ├── humidity.txt         # 0% to 100% (upto 3 decimal places)
+    |       ├── air_pressure.txt     # 3 to 300 psi (integer)
+    |       └──  ph.txt              # 0 to 14 (upto 1 decimal place)
+    |    └── device2
+    |       ├── distance.txt         # 0 to 100m (upto 2 decimal places) 
+    |       └── switch_state.txt     # “ON” or “OFF”
+    │        
     ├── src                     # Source files (alternatively `lib` or `app`)
     ├── ...
     ├── test                    # Test files (alternatively `spec` or `tests`)
-    │   ├── benchmarks          # Load and stress tests
-    │   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
-    │   └── unit                # Unit tests
     ├── ...
-    ├── tools                   # Tools and utilities
     ├── LICENSE
     ├── README.md 
     ├── Setup.md                # If Installation instructions are lengthy
@@ -130,7 +129,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 ## Acknowledgements and Resources
 * [SRA VJTI](http://sra.vjti.info/) Eklavya 2020  
 * [Vedant Paranjape](https://github.com/VedantParanjape)
-* [MQTT using mosquitto]
+* MQTT using mosquitto
   * [1. Basics: Publisher- Subscriber](https://www.youtube.com/watch?v=ERPhUsmbhMo&t=101s)
   <!--* [2. ]()-->
 * [Multithreading using C](https://www.youtube.com/watch?v=QbFM0YroaF0)
